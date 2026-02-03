@@ -1,0 +1,540 @@
+/**
+ * David & David Reveal.js Theme
+ * 
+ * Color palette:
+ * - Background: #1a1f35 (dark navy)
+ * - Cards: #232942, #2a3150
+ * - Gold accent: #d4a574
+ * - Text: #ffffff (primary), #9ca3af (secondary), #6b7280 (muted)
+ * - Accents: coral (#e07a5f), cyan (#4ecdc4), purple (#a78bfa), teal (#2dd4bf), green (#4ade80)
+ */
+
+ :root {
+    --bg-primary: #1a1f35;
+    --bg-card: #232942;
+    --bg-card-alt: #2a3150;
+    --gold: #d4a574;
+    --gold-dark: #c4956a;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --accent-coral: #e07a5f;
+    --accent-cyan: #4ecdc4;
+    --accent-purple: #a78bfa;
+    --accent-teal: #2dd4bf;
+    --accent-green: #4ade80;
+    --accent-blue: #60a5fa;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+.reveal-viewport {
+    background: var(--bg-primary);
+}
+
+.reveal {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.reveal h1 { font-size: 3.5em; margin-bottom: 0.3em; }
+.reveal h2 { font-size: 2.5em; margin-bottom: 0.3em; }
+.reveal h3 { font-size: 1.5em; margin-bottom: 0.2em; }
+
+.reveal section {
+    height: 100%;
+    padding: 40px 60px;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   SLIDE TYPE: Title Slide
+   ============================================ */
+
+.title-slide {
+    position: relative;
+}
+
+/* Commented out - was rendering twice
+.title-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: var(--gold);
+}
+*/
+
+.title-slide .content {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    padding-left: 30px;
+    border-left: 6px solid var(--gold);
+}
+
+.title-slide h1 {
+    font-size: 4em;
+    margin-bottom: 0.2em;
+}
+
+.title-slide .subtitle {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.8em;
+    color: var(--gold);
+    margin-bottom: 1em;
+}
+
+.title-slide .meta {
+    color: var(--text-secondary);
+    font-size: 1.1em;
+}
+
+/* ============================================
+   SLIDE TYPE: Section Divider
+   ============================================ */
+
+.section-slide {
+    position: relative;
+}
+
+.section-slide .content {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    padding-left: 30px;
+    border-left: 6px solid var(--gold);
+}
+
+.section-slide .number {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 8em;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 0;
+}
+
+.section-slide h2 {
+    font-size: 3.5em;
+    margin-top: 0;
+    margin-bottom: 0.3em;
+}
+
+.section-slide .description {
+    color: var(--text-secondary);
+    font-size: 1.3em;
+}
+
+/* ============================================
+   SLIDE TYPE: Content Slide (with header bar)
+   ============================================ */
+
+.content-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.content-slide .header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.content-slide .header::before {
+    content: '';
+    width: 6px;
+    height: 80px;
+    background: var(--gold);
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.content-slide .header-text h2 {
+    margin: 0;
+    text-align: left;
+}
+
+.content-slide .header-text .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1em;
+    margin-top: 8px;
+}
+
+/* ============================================
+   COMPONENTS: Cards
+   ============================================ */
+
+.card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 25px 30px;
+    text-align: left;
+}
+
+.card-bordered {
+    border-left: 4px solid var(--gold);
+}
+
+.card-bordered.coral { border-left-color: var(--accent-coral); }
+.card-bordered.cyan { border-left-color: var(--accent-cyan); }
+.card-bordered.purple { border-left-color: var(--accent-purple); }
+.card-bordered.teal { border-left-color: var(--accent-teal); }
+.card-bordered.green { border-left-color: var(--accent-green); }
+
+.card-outline {
+    background: var(--bg-card);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.card h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 0 0 8px 0;
+    color: var(--text-primary);
+}
+
+.card p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.card .label {
+    font-size: 0.75em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+/* ============================================
+   COMPONENTS: Labels
+   ============================================ */
+
+.label.coral { color: var(--accent-coral); }
+.label.cyan { color: var(--accent-cyan); }
+.label.purple { color: var(--accent-purple); }
+.label.teal { color: var(--accent-teal); }
+.label.gold { color: var(--gold); }
+
+/* ============================================
+   LAYOUTS: Two Column
+   ============================================ */
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ============================================
+   LAYOUTS: Feature List
+   ============================================ */
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.feature-list .card {
+    width: 100%;
+}
+
+/* ============================================
+   COMPONENTS: CTA Bar
+   ============================================ */
+
+.cta-bar {
+    background: var(--gold);
+    color: var(--bg-primary);
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    width: 100%;
+    text-align: left;
+    margin-top: auto;
+}
+
+/* ============================================
+   LAYOUTS: Numbered Grid
+   ============================================ */
+
+.numbered-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.numbered-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.numbered-item .number-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.numbered-item .item-content h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.numbered-item .item-content p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* ============================================
+   LAYOUTS: Metrics Dashboard
+   ============================================ */
+
+.metrics-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.metric-card .value {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.metric-card .value.gold { color: var(--gold); }
+.metric-card .value.green { color: var(--accent-green); }
+.metric-card .value.cyan { color: var(--accent-cyan); }
+.metric-card .value.purple { color: var(--accent-purple); }
+
+.metric-card .metric-label {
+    color: var(--text-secondary);
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ============================================
+   LAYOUTS: Comparison / Profile Cards
+   ============================================ */
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.profile-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 30px;
+    border-left: 4px solid var(--accent-cyan);
+}
+
+.profile-card.purple {
+    border-left-color: var(--accent-purple);
+}
+
+.profile-card h3 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.4em;
+    margin: 0 0 5px 0;
+}
+
+.profile-card .category {
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}
+
+.profile-card .description {
+    color: var(--text-secondary);
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.profile-card .outcome {
+    color: var(--text-primary);
+    font-size: 0.95em;
+}
+
+.insight-box {
+    background: var(--bg-card);
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 25px 30px;
+    width: 100%;
+}
+
+/* ============================================
+   SLIDE TYPE: Thank You
+   ============================================ */
+
+.thank-you-slide {
+    position: relative;
+}
+
+.thank-you-slide .center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Commented out - was rendering twice
+.thank-you-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--gold);
+}
+
+.thank-you-slide::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: var(--gold);
+}
+*/
+
+.thank-you-slide h1 {
+    font-size: 5em;
+    margin-bottom: 0.2em;
+}
+
+.thank-you-slide .tagline {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 1.5em;
+    color: var(--gold);
+    margin-bottom: 2em;
+}
+
+.thank-you-slide .contact-card {
+    background: var(--bg-card);
+    border-radius: 8px;
+    padding: 30px 60px;
+    text-align: center;
+}
+
+.thank-you-slide .contact-card h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+}
+
+.thank-you-slide .contact-card .role {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.thank-you-slide .contact-card .contact-info {
+    color: var(--text-muted);
+    font-size: 0.95em;
+}
+
+/* ============================================
+   COMPONENTS: Checklist
+   ============================================ */
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+}
+
+.checklist li::before {
+    content: '✓';
+    color: var(--gold);
+    font-weight: bold;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+.full-width { width: 100%; }
+.text-left { text-align: left; }
+.mt-auto { margin-top: auto; }
