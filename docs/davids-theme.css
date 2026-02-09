@@ -54,7 +54,7 @@
 
 .reveal section {
     height: 100%;
-    padding: 40px 60px;
+    padding: 40px 60px 50px 60px;
     box-sizing: border-box;
 }
 
@@ -157,7 +157,9 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: 30px;
-    width: 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .content-slide .header::before {
@@ -240,6 +242,7 @@
 .label.purple { color: var(--accent-purple); }
 .label.teal { color: var(--accent-teal); }
 .label.gold { color: var(--gold); }
+.label.green { color: var(--accent-green); }
 
 /* ============================================
    LAYOUTS: Two Column
@@ -249,28 +252,51 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
+    flex: 1;
+    min-height: 0;
 }
 
 .column {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-height: 95%;
 }
 
 /* ============================================
-   LAYOUTS: Feature List
+   LAYOUTS: Feature List (vertical)
    ============================================ */
 
 .feature-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .feature-list .card {
     width: 100%;
+}
+
+/* ============================================
+   LAYOUTS: Feature Grid (horizontal 3-column)
+   ============================================ */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.feature-grid .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ============================================
@@ -283,9 +309,10 @@
     padding: 20px 30px;
     border-radius: 8px;
     font-weight: 600;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
     text-align: left;
-    margin-top: auto;
 }
 
 /* ============================================
@@ -296,7 +323,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
 }
 
 .numbered-item {
@@ -343,7 +371,8 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     margin-bottom: 30px;
 }
 
@@ -382,7 +411,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
     margin-bottom: 30px;
 }
 
@@ -429,7 +459,8 @@
     border: 2px solid var(--gold);
     border-radius: 8px;
     padding: 25px 30px;
-    width: 100%;
+    width: 95%;
+    margin: 0 auto;
 }
 
 /* ============================================
@@ -535,6 +566,276 @@
    UTILITIES
    ============================================ */
 
-.full-width { width: 100%; }
+.full-width { width: 95%; margin: 0 auto; }
+.centered-width { width: 90%; margin: 0 auto; }
 .text-left { text-align: left; }
 .mt-auto { margin-top: auto; }
+
+/* ============================================
+   COMPACT MODE - for slides with heavy content
+   Use: <section class="content-slide compact">
+   ============================================ */
+
+.compact .header {
+    margin-bottom: 15px !important;
+}
+
+.compact .header::before {
+    height: 60px !important;
+}
+
+.compact .metrics-row {
+    margin-bottom: 12px !important;
+    gap: 12px !important;
+}
+
+.compact .metric-card {
+    padding: 12px 8px !important;
+}
+
+.compact .metric-card .value {
+    font-size: 1.8em !important;
+    margin-bottom: 5px !important;
+}
+
+.compact .metric-card .metric-label {
+    font-size: 0.7em !important;
+}
+
+.compact .feature-list {
+    gap: 8px !important;
+}
+
+.compact .feature-grid {
+    gap: 12px !important;
+}
+
+.compact .card {
+    padding: 12px 18px !important;
+}
+
+.compact .card h4 {
+    font-size: 0.95em !important;
+    margin-bottom: 3px !important;
+}
+
+.compact .card p {
+    font-size: 0.8em !important;
+    line-height: 1.35 !important;
+}
+
+.compact .card-outline {
+    padding: 15px 20px !important;
+}
+
+.compact .numbered-grid {
+    gap: 10px !important;
+}
+
+.compact .numbered-item {
+    padding: 12px 15px !important;
+}
+
+.compact .numbered-item .number-circle {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 1.2em !important;
+}
+
+.compact .numbered-item .item-content h4 {
+    font-size: 0.95em !important;
+}
+
+.compact .numbered-item .item-content p {
+    font-size: 0.8em !important;
+}
+
+/* ============================================
+   PRINT / PDF EXPORT STYLES
+   ============================================ */
+
+@media print {
+    .reveal .slides {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    .reveal .slides section {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 25px 40px 60px 40px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .two-column,
+    .numbered-grid,
+    .comparison-grid,
+    .metrics-row,
+    .feature-list,
+    .feature-grid,
+    .insight-box,
+    .cta-bar {
+        width: 95% !important;
+        max-width: 95% !important;
+        margin: 0 auto !important;
+        gap: 15px !important;
+    }
+    
+    .card,
+    .card-outline,
+    .profile-card,
+    .metric-card,
+    .numbered-item {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .content-slide .header {
+        width: 95% !important;
+        margin: 0 auto !important;
+    }
+    
+    .feature-list .card {
+        width: 100% !important;
+    }
+}
+
+/* Reveal.js print-pdf specific */
+html.print-pdf .reveal .slides section {
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    padding: 25px 40px 60px 40px !important;
+    box-sizing: border-box !important;
+}
+
+html.print-pdf .two-column,
+html.print-pdf .numbered-grid,
+html.print-pdf .comparison-grid,
+html.print-pdf .metrics-row,
+html.print-pdf .feature-list,
+html.print-pdf .feature-grid,
+html.print-pdf .insight-box,
+html.print-pdf .cta-bar {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin: 0 auto !important;
+}
+
+html.print-pdf .content-slide .header {
+    width: 95% !important;
+    margin: 0 auto !important;
+}
+
+html.print-pdf .card,
+html.print-pdf .card-outline,
+html.print-pdf .profile-card,
+html.print-pdf .metric-card,
+html.print-pdf .numbered-item {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+html.print-pdf .feature-list .card {
+    width: 100% !important;
+}
+
+/* Compact mode for print-pdf */
+html.print-pdf .compact .header {
+    margin-bottom: 12px !important;
+}
+
+html.print-pdf .compact .metrics-row {
+    margin-bottom: 10px !important;
+    gap: 10px !important;
+}
+
+html.print-pdf .compact .metric-card {
+    padding: 10px 6px !important;
+}
+
+html.print-pdf .compact .metric-card .value {
+    font-size: 1.6em !important;
+}
+
+html.print-pdf .compact .metric-card .metric-label {
+    font-size: 0.65em !important;
+}
+
+html.print-pdf .compact .feature-list {
+    gap: 6px !important;
+}
+
+html.print-pdf .compact .feature-grid {
+    gap: 10px !important;
+}
+
+html.print-pdf .compact .card {
+    padding: 10px 15px !important;
+}
+
+html.print-pdf .compact .card h4 {
+    font-size: 0.9em !important;
+    margin-bottom: 2px !important;
+}
+
+html.print-pdf .compact .card p {
+    font-size: 0.75em !important;
+    line-height: 1.3 !important;
+}
+
+/* Compact spacing for print */
+html.print-pdf .content-slide .header {
+    margin-bottom: 15px !important;
+}
+
+html.print-pdf .metrics-row {
+    margin-bottom: 15px !important;
+    gap: 10px !important;
+}
+
+html.print-pdf .metric-card {
+    padding: 15px 10px !important;
+}
+
+html.print-pdf .metric-card .value {
+    font-size: 2.2em !important;
+}
+
+html.print-pdf .feature-list {
+    gap: 10px !important;
+}
+
+html.print-pdf .card {
+    padding: 15px 20px !important;
+}
+
+html.print-pdf .card h4 {
+    margin-bottom: 4px !important;
+}
+
+html.print-pdf .card p {
+    font-size: 0.85em !important;
+    line-height: 1.4 !important;
+}
+
+html.print-pdf .numbered-grid {
+    gap: 12px !important;
+}
+
+html.print-pdf .numbered-item {
+    padding: 15px !important;
+}
+
+html.print-pdf .comparison-grid {
+    gap: 15px !important;
+    margin-bottom: 15px !important;
+}
+
+html.print-pdf .profile-card {
+    padding: 20px !important;
+}
+
+html.print-pdf .card-outline {
+    padding: 20px !important;
+}
