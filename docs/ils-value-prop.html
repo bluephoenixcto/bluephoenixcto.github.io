@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ILS Digital Coworker — Value Proposition</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #0a4a54;
+    --teal-mid: #0e6677;
+    --teal-bright: #1a9ab0;
+    --teal-light: #b8e4ed;
+    --teal-pale: #e8f6f9;
+    --gold: #c8973a;
+    --gold-light: #f0d9a8;
+    --cream: #faf7f2;
+    --ink: #1a1a1a;
+    --ink-mid: #3d3d3d;
+    --ink-light: #6b6b6b;
+    --white: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--teal-deep);
+    padding: 64px 72px 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,154,176,0.25) 0%, transparent 70%);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 200px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,151,58,0.15) 0%, transparent 70%);
+  }
+
+  .hero-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-bright);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .hero h1 span {
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--teal-light);
+    margin-bottom: 40px;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-premise {
+    border-left: 3px solid var(--gold);
+    padding-left: 20px;
+    max-width: 680px;
+  }
+
+  .hero-premise p {
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.88);
+    font-weight: 300;
+  }
+
+  .hero-premise p strong {
+    color: var(--white);
+    font-weight: 600;
+  }
+
+  /* ── CHAIN ── */
+  .chain-section {
+    background: var(--white);
+    padding: 48px 72px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .section-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--teal-bright);
+    margin-bottom: 32px;
+  }
+
+  .chain {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+
+  .chain-box {
+    background: var(--teal-pale);
+    border: 1px solid var(--teal-light);
+    border-radius: 8px;
+    padding: 14px 20px;
+    text-align: center;
+    flex: 1;
+    position: relative;
+  }
+
+  .chain-box.highlight {
+    background: var(--teal-deep);
+    border-color: var(--teal-deep);
+  }
+
+  .chain-box.highlight .chain-text {
+    color: var(--white);
+  }
+
+  .chain-text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--teal-deep);
+    line-height: 1.3;
+  }
+
+  .chain-arrow {
+    width: 28px;
+    text-align: center;
+    font-size: 18px;
+    color: var(--teal-bright);
+    flex-shrink: 0;
+  }
+
+  .chain-split {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .chain-split-box {
+    flex: 1;
+    border-radius: 10px;
+    padding: 20px 24px;
+    position: relative;
+  }
+
+  .chain-split-box.left {
+    background: linear-gradient(135deg, #e8f6f9 0%, #d0eef5 100%);
+    border: 1px solid var(--teal-light);
+  }
+
+  .chain-split-box.right {
+    background: linear-gradient(135deg, #fdf6e8 0%, #f5e8c8 100%);
+    border: 1px solid var(--gold-light);
+  }
+
+  .split-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .left .split-label { color: var(--teal-mid); }
+  .right .split-label { color: var(--gold); }
+
+  .split-outcomes {
+    list-style: none;
+  }
+
+  .split-outcomes li {
+    font-size: 13px;
+    color: var(--ink-mid);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .split-outcomes li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    font-weight: 600;
+  }
+
+  .left .split-outcomes li::before { color: var(--teal-bright); }
+  .right .split-outcomes li::before { color: var(--gold); }
+
+  .chain-split-connector {
+    display: flex;
+    justify-content: center;
+    margin: 12px 0 4px;
+    gap: 200px;
+  }
+
+  .chain-split-connector span {
+    font-size: 22px;
+    color: var(--teal-bright);
+  }
+
+  /* ── THREE LEGS ── */
+  .legs-section {
+    padding: 56px 72px;
+    background: var(--cream);
+  }
+
+  .legs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 8px;
+  }
+
+  .leg-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  }
+
+  .leg-header {
+    padding: 28px 28px 20px;
+    position: relative;
+  }
+
+  .leg-card:nth-child(1) .leg-header { background: var(--teal-deep); }
+  .leg-card:nth-child(2) .leg-header { background: #2c5f2e; }
+  .leg-card:nth-child(3) .leg-header { background: #4a2c5f; }
+
+  .leg-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.12);
+    position: absolute;
+    top: 8px; right: 20px;
+    line-height: 1;
+  }
+
+  .leg-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .leg-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .leg-tagline {
+    font-size: 12px;
+    font-style: italic;
+    color: rgba(255,255,255,0.65);
+    font-weight: 300;
+  }
+
+  .leg-body {
+    background: var(--white);
+    padding: 24px 28px 28px;
+    flex: 1;
+  }
+
+  .leg-body p {
+    font-size: 13px;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .leg-wins {
+    list-style: none;
+  }
+
+  .leg-wins li {
+    font-size: 13px;
+    color: var(--ink);
+    padding: 7px 0 7px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .leg-wins li:last-child { border-bottom: none; }
+
+  .leg-wins li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  .leg-card:nth-child(1) .leg-wins li::before { color: var(--teal-bright); }
+  .leg-card:nth-child(2) .leg-wins li::before { color: #4caf50; }
+  .leg-card:nth-child(3) .leg-wins li::before { color: #9c6fcf; }
+
+  .leg-highlight {
+    margin-top: 18px;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .leg-card:nth-child(1) .leg-highlight {
+    background: var(--teal-pale);
+    color: var(--teal-deep);
+    border-left: 3px solid var(--teal-bright);
+  }
+
+  .leg-card:nth-child(2) .leg-highlight {
+    background: #f0faf0;
+    color: #2c5f2e;
+    border-left: 3px solid #4caf50;
+  }
+
+  .leg-card:nth-child(3) .leg-highlight {
+    background: #f7f0ff;
+    color: #4a2c5f;
+    border-left: 3px solid #9c6fcf;
+  }
+
+  /* ── ALIGNMENT BAND ── */
+  .alignment-band {
+    background: var(--teal-deep);
+    padding: 40px 72px;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .alignment-text {
+    flex: 1;
+  }
+
+  .alignment-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--white);
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .alignment-text p {
+    font-size: 14px;
+    color: var(--teal-light);
+    line-height: 1.65;
+    font-weight: 300;
+  }
+
+  .alignment-stool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .stool-legs {
+    display: flex;
+    gap: 8px;
+  }
+
+  .stool-leg {
+    width: 72px;
+    border-radius: 8px;
+    padding: 10px 8px;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .stool-leg.teal { background: var(--teal-bright); color: white; }
+  .stool-leg.green { background: #4caf50; color: white; }
+  .stool-leg.purple { background: #9c6fcf; color: white; }
+
+  .stool-seat {
+    width: 240px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 3px;
+  }
+
+  .stool-seat-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 6px;
+  }
+
+  /* ── FEATURES ── */
+  .features-section {
+    background: var(--white);
+    padding: 48px 72px 56px;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .feature-pill {
+    border-radius: 10px;
+    padding: 14px 18px;
+    border: 1px solid;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .feature-pill.provider {
+    background: var(--teal-pale);
+    border-color: var(--teal-light);
+  }
+
+  .feature-pill.patient {
+    background: #f0faf0;
+    border-color: #c5e8c5;
+  }
+
+  .feature-pill.business {
+    background: #f7f0ff;
+    border-color: #d9c5ef;
+  }
+
+  .feature-pill.all {
+    background: #fdf6e8;
+    border-color: var(--gold-light);
+  }
+
+  .feature-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+
+  .provider .feature-dot { background: var(--teal-bright); }
+  .patient .feature-dot { background: #4caf50; }
+  .business .feature-dot { background: #9c6fcf; }
+  .all .feature-dot { background: var(--gold); }
+
+  .feature-pill-text {
+    font-size: 12.5px;
+    color: var(--ink-mid);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  .feature-legend {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--ink-light);
+    text-transform: uppercase;
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--ink);
+    padding: 24px 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .footer-brand span { color: var(--gold); }
+
+  .footer-tagline {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">ILS Digital Coworker · Value Proposition</div>
+  <h1>Free to <span>Care.</span></h1>
+  <p class="hero-sub">An integrated platform for patients, families, and care providers</p>
+  <div class="hero-premise">
+    <p>Everyone in care got into this work for the same reason: <strong>they want to help people.</strong> The Digital Coworker removes the administrative burden that gets in the way — so care providers can focus on the work that actually matters.</p>
+  </div>
+</div>
+
+<!-- CHAIN -->
+<div class="chain-section">
+  <div class="section-label">The Value Chain</div>
+  <div class="chain">
+    <div class="chain-box highlight">
+      <div class="chain-text">Digital Coworker removes administrative burden</div>
+    </div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-box">
+      <div class="chain-text">Care providers give more direct, attentive care</div>
+    </div>
+    <div class="chain-arrow">→</div>
+    <div class="chain-box">
+      <div class="chain-text">Members are healthier &amp; more stable</div>
+    </div>
+  </div>
+
+  <div class="chain-split-connector">
+    <span>↙</span>
+    <span>↘</span>
+  </div>
+
+  <div class="chain-split">
+    <div class="chain-split-box left">
+      <div class="split-label">Patients &amp; Families</div>
+      <ul class="split-outcomes">
+        <li>Feel truly cared for, not processed</li>
+        <li>Fewer crises, fewer ER visits</li>
+        <li>Deeper trust in the care team</li>
+        <li>Informed, involved, at peace</li>
+      </ul>
+    </div>
+    <div class="chain-split-box right">
+      <div class="split-label">ALFs &amp; ILS</div>
+      <ul class="split-outcomes">
+        <li>Lower medical loss ratio</li>
+        <li>More care manager capacity</li>
+        <li>Higher quality facility reputation</li>
+        <li>More revenue, more business</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- THREE LEGS -->
+<div class="legs-section">
+  <div class="section-label">The Three Legs of the Stool</div>
+  <div class="legs-grid">
+
+    <!-- Leg 1: Care Providers -->
+    <div class="leg-card">
+      <div class="leg-header">
+        <div class="leg-number">1</div>
+        <div class="leg-icon">🩺</div>
+        <div class="leg-title">Care Providers</div>
+        <div class="leg-tagline">"Finally free to do the work I came here to do."</div>
+      </div>
+      <div class="leg-body">
+        <p>ILS care managers and ALF staff carry two simultaneous jobs: caring for people, and documenting everything about it. The Digital Coworker takes the second job off their plate.</p>
+        <ul class="leg-wins">
+          <li>Instant member context — no chart-digging</li>
+          <li>Conversations auto-captured &amp; summarized</li>
+          <li>Care plans drafted, not written from scratch</li>
+          <li>Daily priority queue — no one falls through</li>
+          <li>Compliance deadlines tracked automatically</li>
+          <li>ALF–ILS coordination handled seamlessly</li>
+        </ul>
+        <div class="leg-highlight">
+          A care manager with recovered time per day doesn't do less work, they do more <em>care</em>.
+        </div>
+      </div>
+    </div>
+
+    <!-- Leg 2: Patients & Families -->
+    <div class="leg-card">
+      <div class="leg-header">
+        <div class="leg-number">2</div>
+        <div class="leg-icon">❤️</div>
+        <div class="leg-title">Patients &amp; Families</div>
+        <div class="leg-tagline">"Someone always knows what's going on."</div>
+      </div>
+      <div class="leg-body">
+        <p>Patients don't see the Digital Coworker. They experience the effect of it — a care team that's fully present, responds early, and remembers what was said last week.</p>
+        <ul class="leg-wins">
+          <li>Provider present in conversation, not distracted</li>
+          <li>Informal signals captured (&amp; acted on)</li>
+          <li>Proactive calls before things get bad</li>
+          <li>Families updated, not kept in the dark</li>
+          <li>Every team member working from same picture</li>
+          <li>Feels like an elite care team, at scale</li>
+          <li>Fewer crises means lower out-of-pocket costs</li>
+        </ul>
+        <div class="leg-highlight">
+          What families want is simple: the feeling that someone is truly paying attention. The Digital Coworker makes it possible to pay that kind of attention to more members.
+        </div>
+      </div>
+    </div>
+
+    <!-- Leg 3: Business -->
+    <div class="leg-card">
+      <div class="leg-header">
+        <div class="leg-number">3</div>
+        <div class="leg-icon">📈</div>
+        <div class="leg-title">ALFs &amp; ILS</div>
+        <div class="leg-tagline">"Better outcomes are better business."</div>
+      </div>
+      <div class="leg-body">
+        <p>The business case follows directly from the care case. Healthier, more stable members mean the costly events that hurt everyone happen less often.</p>
+        <ul class="leg-wins">
+          <li>20–67% of transfers are potentially avoidable</li>
+          <li>30–50% increase in care manager capacity</li>
+          <li>ALFs: protocol confidence, lower liability</li>
+          <li>ALFs: differentiated product, stable census</li>
+          <li>ILS: FC2 enrollment pipeline activated</li>
+          <li>ILS: margin improves with every avoided crisis</li>
+        </ul>
+        <div class="leg-highlight">
+          Investing in the Digital Coworker isn't a cost center decision. It's a margin decision — and the returns flow to every party in the ecosystem.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ALIGNMENT BAND -->
+<div class="alignment-band">
+  <div class="alignment-text">
+    <h3>Why This Works for Everyone</h3>
+    <p>This isn't a zero-sum trade. Every leg of the stool strengthens the others. ILS only improves margins if members are healthier. Members only get healthier if care providers have the time and tools to care for them well. ALFs only differentiate on quality if the coordination infrastructure supports them. The Digital Coworker is that infrastructure — connecting the interests of every stakeholder around the outcome that matters most: members living better, longer, in place.</p>
+  </div>
+  <div class="alignment-stool">
+    <div class="stool-seat"></div>
+    <div class="stool-seat-label">Shared Outcome</div>
+    <div class="stool-legs">
+      <div class="stool-leg teal">Care Providers</div>
+      <div class="stool-leg green">Patients &amp; Families</div>
+      <div class="stool-leg purple">ALFs &amp; ILS</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features-section">
+  <div class="section-label">Feature Map</div>
+  <div class="feature-legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#1a9ab0"></div>Provider Benefit</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#4caf50"></div>Patient &amp; Family Benefit</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#9c6fcf"></div>Business Benefit</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#c8973a"></div>All Three Legs</div>
+  </div>
+  <div class="features-grid">
+    <div class="feature-pill all"><div class="feature-dot"></div><div class="feature-pill-text">Interaction capture &amp; auto-documentation</div></div>
+    <div class="feature-pill provider"><div class="feature-dot"></div><div class="feature-pill-text">On-demand member context synthesis</div></div>
+    <div class="feature-pill provider"><div class="feature-dot"></div><div class="feature-pill-text">Daily priority queue</div></div>
+    <div class="feature-pill patient"><div class="feature-dot"></div><div class="feature-pill-text">Longitudinal pattern recognition</div></div>
+    <div class="feature-pill all"><div class="feature-dot"></div><div class="feature-pill-text">Dynamic real-time risk stratification</div></div>
+    <div class="feature-pill provider"><div class="feature-dot"></div><div class="feature-pill-text">AI care plan &amp; progress note drafting</div></div>
+    <div class="feature-pill provider"><div class="feature-dot"></div><div class="feature-pill-text">Deadline &amp; compliance tracking</div></div>
+    <div class="feature-pill patient"><div class="feature-dot"></div><div class="feature-pill-text">Family communication drafting</div></div>
+    <div class="feature-pill all"><div class="feature-dot"></div><div class="feature-pill-text">ALF coordination messaging</div></div>
+    <div class="feature-pill business"><div class="feature-dot"></div><div class="feature-pill-text">FC2 enrollment facilitation &amp; tracking</div></div>
+    <div class="feature-pill business"><div class="feature-dot"></div><div class="feature-pill-text">Population-level insight surfacing</div></div>
+    <div class="feature-pill provider"><div class="feature-dot"></div><div class="feature-pill-text">Protocol capture &amp; onboarding acceleration</div></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">ILS <span>Digital Coworker</span></div>
+  <div class="footer-tagline">Every leg of the stool. Every stakeholder. One platform.</div>
+</div>
+
+</body>
+</html>
